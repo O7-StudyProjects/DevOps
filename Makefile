@@ -1,8 +1,11 @@
-Main : main.o
-	g++ main.o -o Main
+BUILD_DIR = ./build/
+SRC_DIR = ./src/
 
-main.o : main.cpp
-	g++ -c main.cpp -o main.o
+$(BUILD_DIR)Main : $(BUILD_DIR)main.o
+	g++ $(BUILD_DIR)main.o -o $(BUILD_DIR)Main
+
+$(BUILD_DIR)main.o : $(SRC_DIR)main.cpp
+	g++ -c $(SRC_DIR)main.cpp -o $(BUILD_DIR)main.o
 
 clean : 
-	Main *.o
+	rm $(BUILD_DIR)Main $(BUILD_DIR)*.o
