@@ -14,19 +14,19 @@ int LibTest()
     string test_string4 = "On her next trip to LA, she really wants to try In-N-Out.";
     string test_string_result4 = "In-N-Out";
 
-   const bool result1 = FindLongestWords(test_string1) == test_string_result1;
-   const bool result2 = FindLongestWords(test_string2) == test_string_result2;
-   const bool result3 = FindLongestWords(test_string3) == test_string_result3;
-   const bool result4 = FindLongestWords(test_string4) == test_string_result4;
+    const bool result1 = FindLongestWords(test_string1) == test_string_result1;
+    const bool result2 = FindLongestWords(test_string2) == test_string_result2;
+    const bool result3 = FindLongestWords(test_string3) == test_string_result3;
+    const bool result4 = FindLongestWords(test_string4) == test_string_result4;
 
-   if (result1 && result2 && result3 && result4)
-   {
-        return 1;
-   }
-   else
-   {
+    if (result1 && result2 && result3 && result4)
+    {
         return 0;
-   }
+    }
+    else
+    {
+        return 1;
+    }
 }
 
 int main()
