@@ -45,7 +45,7 @@ jobs:
     steps:
       - name: Create .deb package
         run: |
-          dpkg-deb --build ${{github.workspace}}/devops
+          sudo dpkg-deb --build ${{github.workspace}}/devops
 
       - name: Upload .deb package
         uses: actions/upload-artifact@v4
