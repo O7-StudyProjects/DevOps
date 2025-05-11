@@ -14,12 +14,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Create build directory
+        run: |
+          mkdir ${{github.workspace}}/devops/usr/devops/build
+
       - name: Run Makefile
         run: |
           cd ${{github.workspace}}/devops/usr/devops
           make
+
       - name: Mark test as executable
         run: chmod +x ${{github.workspace}}/devops/usr/devops/build/Test
+
       - name: Run test
         id: test
         run: |
