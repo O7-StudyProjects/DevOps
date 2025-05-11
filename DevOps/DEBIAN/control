@@ -1,0 +1,6 @@
+Package: DevOps
+Version: 1.0
+Architecture: amd64
+Maintainer: O7-StudyProjects
+Description: DevOps study project
+Depends: make, g++
