@@ -7,7 +7,7 @@ string FindLongestWords(string in_string)
 
     for (string::iterator it = in_string.begin(); it != in_string.end(); it++)
     {
-        const bool is_correct_char = isalpha(*it) || !word.empty() && (*it) == '-';
+        const bool is_correct_char = isalpha(*it) || !word.empty() && ((*it) == '-' || (*it) == '\'');
         if (is_correct_char)
         {
             word += *it;
