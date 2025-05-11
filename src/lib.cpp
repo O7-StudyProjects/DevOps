@@ -1,0 +1,45 @@
+#include "lib.h"
+
+string FindLongestWords(string in_string)
+{
+    string word, final_string;
+    int max_length = 0;
+
+    for (string::iterator it = in_string.begin(); it < in_string.end(); it++)
+    {
+        if (isalpha(*it) || !word.empty() && (*it) == '-')
+        {
+            word += *it;
+        }
+        else
+        {
+            if (word.empty())
+            {
+                continue;
+            }
+
+            cout << word << " [" << word.length() << "]" << endl;
+            if (word.length() < max_length)
+            {
+                word.clear();
+                continue;
+            }
+            else if (word.length() > max_length)
+            {
+                max_length = word.length();
+                final_string.clear();
+            }
+
+
+            if (!final_string.empty())
+            {
+                final_string += ' ';
+            }
+
+            final_string += word;
+            word.clear();
+        }
+    }
+
+    return final_string;
+}

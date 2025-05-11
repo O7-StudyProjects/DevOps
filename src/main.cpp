@@ -1,7 +1,11 @@
-#include <iostream>
+#include "lib.h"
 
-int main(int argc, char* argv[])
+
+int main() 
 {
-    std::cout << "Hello World!\n";
+    string input;
+    getline(cin, input);
+    cout << FindLongestWords(input) << endl;
+
     return 0;
-}
+} 
