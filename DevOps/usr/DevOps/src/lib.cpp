@@ -5,13 +5,15 @@ string FindLongestWords(string in_string)
     string word, final_string;
     int max_length = 0;
 
-    for (string::iterator it = in_string.begin(); it < in_string.end(); it++)
+    for (string::iterator it = in_string.begin(); it != in_string.end(); it++)
     {
-        if (isalpha(*it) || !word.empty() && (*it) == '-')
+        const bool is_correct_char = isalpha(*it) || !word.empty() && (*it) == '-';
+        if (is_correct_char)
         {
             word += *it;
         }
-        else
+
+        if (!is_correct_char || it + 1 == in_string.end())
         {
             if (word.empty())
             {
