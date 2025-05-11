@@ -1,10 +1,12 @@
 BUILD_DIR = ./build/
 SRC_DIR = ./src/
 
-$(BUILD_DIR)Main : $(BUILD_DIR)main.o $(BUILD_DIR)lib.o
+all : Main Test
+
+Main : $(BUILD_DIR)main.o $(BUILD_DIR)lib.o
 	g++ $(BUILD_DIR)main.o $(BUILD_DIR)lib.o -o $(BUILD_DIR)Main
 
-$(BUILD_DIR)Test : $(BUILD_DIR)test.o $(BUILD_DIR)lib.o
+Test : $(BUILD_DIR)test.o $(BUILD_DIR)lib.o
 	g++ $(BUILD_DIR)test.o $(BUILD_DIR)lib.o -o $(BUILD_DIR)Test
 
 $(BUILD_DIR)main.o : $(SRC_DIR)main.cpp
