@@ -20,7 +20,6 @@ string FindLongestWords(string in_string)
                 continue;
             }
 
-            cout << word << " [" << word.length() << "]" << endl;
             if (word.length() < max_length)
             {
                 word.clear();
