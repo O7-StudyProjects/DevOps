@@ -38,6 +38,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-output
+          path: ${{github.workspace}}/build
 
       - name: Mark test as executable
         run: chmod +x ${{github.workspace}}/build/Test
