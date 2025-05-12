@@ -10,7 +10,6 @@ RUN dpkg-deb --build devops && apt-get install -y ./devops.deb
 WORKDIR /usr/devops
 
 RUN mkdir build && \
-    make && \
-    chmod +x ./build/Test
+    make
     
-CMD ["build/Test"]
+ENTRYPOINT ["build/Test"]
