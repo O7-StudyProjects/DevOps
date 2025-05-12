@@ -102,6 +102,6 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKER_LOGIN }}/devops:latest
-            ${{ secrets.DOCKER_LOGIN }}/devops:${{ github.sha }}
+            ${{ vars.DOCKER_USER }}/devops:latest
+            ${{ vars.DOCKER_USER }}/devops:${{ github.sha }}
     
