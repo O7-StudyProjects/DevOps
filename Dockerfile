@@ -1,17 +1,16 @@
 FROM ubuntu:latest
 
-COPY devops /tmp/
+RUN apt-get update
 
 WORKDIR /tmp
+COPY devops devops
 
-RUN dpkg-deb --build devops
-
-RUN apt-get install -y devops.deb
+RUN dpkg-deb --build devops && apt-get install -y ./devops.deb
 
 WORKDIR /usr/devops
 
-RUN mkdir build
-RUN make
-RUN chmod +x ./build/Test
+RUN mkdir build && \
+    make && \
+    chmod +x ./build/Test
     
-ENTRYPOINT ["/usr/devops/build/Test"]
+CMD ["build/Test"]
