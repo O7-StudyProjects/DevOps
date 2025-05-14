@@ -1,7 +1,10 @@
 BUILD_DIR = ./build/
 SRC_DIR = ./src/
 
-all : Main Test
+all : create-build-dir Main Test
+
+create-build-dir :
+	mkdir $(BUILD_DIR)
 
 Main : $(BUILD_DIR)main.o $(BUILD_DIR)lib.o
 	g++ $(BUILD_DIR)main.o $(BUILD_DIR)lib.o -o $(BUILD_DIR)Main
@@ -21,3 +24,5 @@ $(BUILD_DIR)lib.o : $(SRC_DIR)lib.cpp
 
 clean : 
 	rm $(BUILD_DIR)Main $(BUILD_DIR)*.o
+
+.PHONY : all clean create-build-dir
